@@ -1,0 +1,47 @@
+:root{--p:#0D9488;--s:#4F46E5;--bg:#F8FAFC;--tx:#0F172A;--mu:#64748B;--bd:#E2E8F0}
+*{box-sizing:border-box}
+body{margin:0;font:14px/20px Inter,system-ui,sans-serif;background:var(--bg);color:var(--tx);font-variant-numeric:tabular-nums}
+h2{font-size:24px;margin:0 0 16px;letter-spacing:-.015em}h3{margin:0 0 12px;font-size:18px}
+.side{position:fixed;inset:0 auto 0 0;width:220px;background:#fff;border-right:1px solid var(--bd);padding:16px;display:flex;flex-direction:column;gap:6px}
+.side h1{font-size:16px;margin:0 0 12px;color:var(--p)}
+.side a{padding:10px 12px;border-radius:8px;color:var(--tx);text-decoration:none;font-weight:600}
+.side a.on{background:var(--p);color:#fff}
+main{margin-left:220px;padding:24px}
+.card{background:#fff;border:1px solid var(--bd);border-radius:16px;padding:20px;margin-bottom:16px;box-shadow:0 1px 3px rgba(15,23,42,.05)}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:end}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));margin-bottom:16px}
+.grid .card{margin:0}.m{border-top:3px solid var(--p)}.m b{display:block;font-size:32px;line-height:40px}
+.two{display:grid;gap:16px;grid-template-columns:3fr 2fr}
+input,select{padding:10px 14px;border:1px solid #CBD5E1;border-radius:8px;font:inherit;background:#fff}
+.m-wrap input{width:100%}
+input:focus,select:focus{outline:0;border-color:var(--p);box-shadow:0 0 0 3px rgba(20,184,166,.2)}
+label{display:block;font-weight:600;margin:12px 0 4px}.row label{margin:0}
+.btn{background:var(--p);color:#fff;border:0;border-radius:8px;padding:10px 20px;font:600 14px Inter,sans-serif;cursor:pointer}
+.btn:hover{background:#0F766E}.btn:disabled{opacity:.6;cursor:wait}
+.btn.out{background:#fff;color:var(--tx);border:1px solid #CBD5E1}
+.mini{border:1px solid #CBD5E1;background:#fff;border-radius:6px;padding:2px 8px;margin-left:4px;cursor:pointer;font:600 12px Inter,sans-serif}
+.mini.ok{background:var(--p);color:#fff;border-color:var(--p)}
+table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--bd)}
+th{font-size:12px;color:var(--mu);text-transform:uppercase}
+.badge{display:inline-block;padding:2px 12px;border-radius:9999px;font:700 11px Inter,sans-serif;text-transform:uppercase;letter-spacing:.04em;border:1px solid}
+.b-Hadir{background:#D1FAE5;color:#065F46;border-color:#A7F3D0}
+.b-Terlambat{background:#FEF3C7;color:#92400E;border-color:#FDE68A}
+.b-Alpa{background:#FEE2E2;color:#991B1B;border-color:#FECACA}
+.b-Izin,.b-Sakit{background:#E0F2FE;color:#075985;border-color:#BAE6FD}
+.cam{position:relative;border-radius:24px;overflow:hidden;background:#0b1c30;aspect-ratio:4/3}
+.cam video{width:100%;height:100%;object-fit:cover;transform:scaleX(-1)}
+.hint{position:absolute;left:12px;right:12px;bottom:12px;background:rgba(11,28,48,.8);color:#5eead4;padding:8px 14px;border-radius:9999px;text-align:center;font-weight:600}
+.bar{height:8px;background:var(--bd);border-radius:9px;margin-top:10px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--p);transition:width .3s}
+.li{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--bd)}
+.list{max-height:320px;overflow:auto}
+.notif{position:fixed;top:16px;right:16px;padding:12px 18px;border-radius:8px;background:#065F46;color:#fff;transform:translateY(-90px);transition:.25s;z-index:9}
+.notif.show{transform:none}.notif.err{background:#DC2626}
+.center{min-height:100vh;display:grid;place-items:center}.m-wrap{max-width:440px;margin:0 auto;padding:16px}
+.sk{background:linear-gradient(90deg,#eef2f7,#f8fafc,#eef2f7);background-size:200% 100%;animation:sk 1.2s infinite}
+@keyframes sk{to{background-position:-200% 0}}
+@media(max-width:768px){
+.side{inset:auto 0 0 0;width:auto;flex-direction:row;padding:6px;justify-content:space-around;z-index:5}
+.side h1{display:none}.side a{font-size:12px;padding:8px}
+main{margin:0;padding:16px 16px 80px}.two{grid-template-columns:1fr}}
+@media print{.side,.row,.noprint{display:none!important}main{margin:0}}
